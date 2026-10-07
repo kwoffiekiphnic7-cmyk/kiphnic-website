@@ -81,5 +81,8 @@ export async function POST(req: Request) {
       { status: 200 }
     );
   }
+
+  // SMTP path succeeded.
+  return NextResponse.json({ ok: true, delivered: true });
 }
 

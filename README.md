@@ -1,5 +1,7 @@
 # Kiphnic Website — V1
 
+> the website for the ages to come
+
 This is the first functional visual prototype for Kiphnic's AI-first technology company website.
 
 ## Run

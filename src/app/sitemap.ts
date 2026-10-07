@@ -1,8 +1,9 @@
 import type { MetadataRoute } from "next";
 
 import { projects } from "@/data/projects";
+import { siteConfig } from "@/lib/site-config";
 
-const siteUrl = "https://kiphnic.com";
+const siteUrl = siteConfig.url;
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const pages = ["", "/services", "/ai", "/projects", "/about", "/contact"];

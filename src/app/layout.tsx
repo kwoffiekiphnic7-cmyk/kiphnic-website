@@ -6,7 +6,7 @@ import ChatLauncher from "@/components/chat/ChatLauncher";
 import MiniMe from "@/components/MiniMe";
 import { siteConfig } from "@/lib/site-config";
 
-const siteUrl = "https://kiphnic.com";
+const siteUrl = siteConfig.url;
 
 export const metadata: Metadata = {
   title: {
@@ -15,7 +15,8 @@ export const metadata: Metadata = {
   },
   description: siteConfig.description,
   metadataBase: new URL(siteUrl),
-  alternates: { canonical: siteUrl },
+  // Self-referencing canonical per page (resolves against metadataBase).
+  alternates: { canonical: "./" },
   openGraph: {
     title: "Kiphnic — Intelligence. Elevated.",
     description: siteConfig.description,

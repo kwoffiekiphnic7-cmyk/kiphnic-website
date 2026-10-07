@@ -1,5 +1,7 @@
 export const siteConfig = {
   name: "KIPHNIC",
+  // Current canonical origin. Overridable via NEXT_PUBLIC_SITE_URL when a custom domain arrives.
+  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://kiphnic-website.vercel.app",
   tagline: "INTELLIGENCE. ELEVATED.",
   description:
     "Kiphnic is an AI-first technology company building intelligent digital experiences, software and products.",

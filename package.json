@@ -1,0 +1,24 @@
+{
+  "name": "kiphnic-website",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Kiphnic — Intelligence. Elevated. AI-first technology company website.",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "next": "^16.0.0",
+    "nodemailer": "^10.0.15",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "typescript": "^5.6.0"
+  }
+}

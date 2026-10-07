@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kiphnic — Intelligence. Elevated.</title>
+  <meta name="description" content="Kiphnic is an AI-first technology company building intelligent digital experiences, software and products." />
+  <style>
+    :root{--bg:#03070d;--panel:#07111d;--line:#123451;--blue:#0798ff;--blue2:#0064ff;--text:#f3f8ff;--muted:#9aacc0}
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden}
+    body:before{content:"";position:fixed;inset:0;pointer-events:none;background:linear-gradient(rgba(0,140,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(0,140,255,.025) 1px,transparent 1px);background-size:55px 55px;mask-image:linear-gradient(to bottom,black,transparent 85%);z-index:-1}
+    a{text-decoration:none;color:inherit}
+    .container{width:min(1180px,92%);margin:auto}
+    nav{position:fixed;top:0;left:0;right:0;z-index:20;background:rgba(3,7,13,.72);backdrop-filter:blur(18px);border-bottom:1px solid rgba(0,150,255,.12)}
+    .navin{height:76px;display:flex;align-items:center;justify-content:space-between}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.25em}
+    .mark{width:38px;height:38px;border:1px solid #168dff;border-radius:10px;display:grid;place-items:center;color:#58baff;box-shadow:0 0 22px #007cff55;font-weight:900}
+    .brand small{display:block;color:#52aefb;font-size:7px;letter-spacing:.25em;margin-top:3px}
+    .links{display:flex;gap:30px;font-size:12px;color:#c6d4e4}
+    .links a:hover{color:#36a9ff}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 20px;border:1px solid #0a9cff;border-radius:999px;color:#fff;font-size:12px;font-weight:700;background:linear-gradient(90deg,#087cf0,#05a9ff);box-shadow:0 0 24px #008cff35}
+    .btn.alt{background:transparent}
+    .hero{min-height:780px;padding-top:76px;display:grid;align-items:center;position:relative;overflow:hidden}
+    .hero:after{content:"";position:absolute;width:700px;height:700px;right:-160px;top:90px;background:radial-gradient(circle,#008cff33,transparent 65%);filter:blur(15px);z-index:-1}
+    .hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+    .eyebrow{color:#28a6ff;font-size:12px;letter-spacing:.25em;font-weight:800;margin-bottom:18px}
+    h1{font-size:clamp(48px,7vw,88px);line-height:.92;letter-spacing:-.045em}
+    h1 span{color:#0b9cff;text-shadow:0 0 30px #008cff55}
+    .lead{max-width:570px;color:#a9b9cb;line-height:1.7;margin:25px 0 30px;font-size:16px}
+    .actions{display:flex;gap:12px;flex-wrap:wrap}
+    .hero-art{height:510px;display:grid;place-items:center;position:relative}
+    .orb{width:390px;height:390px;border-radius:50%;border:1px solid #168dff55;box-shadow:0 0 70px #008cff33,inset 0 0 70px #008cff18;display:grid;place-items:center;position:relative}
+    .orb:before,.orb:after{content:"";position:absolute;border:1px solid #168dff44;border-radius:50%;transform:rotate(35deg)}
+    .orb:before{width:500px;height:150px}.orb:after{width:150px;height:500px}
+    .logo-core{font-size:130px;font-weight:900;color:#d9ecff;text-shadow:0 0 10px #fff,0 0 45px #008cff;transform:skew(-8deg)}
+    .city{position:absolute;bottom:20px;left:0;right:0;height:130px;background:linear-gradient(to top,#008cff16,transparent);clip-path:polygon(0 100%,0 75%,5% 75%,5% 55%,9% 55%,9% 68%,14% 68%,14% 35%,18% 35%,18% 65%,23% 65%,23% 45%,28% 45%,28% 72%,34% 72%,34% 30%,39% 30%,39% 62%,44% 62%,44% 42%,50% 42%,50% 70%,55% 70%,55% 25%,60% 25%,60% 60%,66% 60%,66% 40%,72% 40%,72% 68%,78% 68%,78% 32%,84% 32%,84% 65%,90% 65%,90% 48%,95% 48%,95% 72%,100% 72%,100% 100%)}
+    .tags{margin-top:45px;color:#6f8ca9;font-size:10px;letter-spacing:.2em;display:flex;gap:18px;flex-wrap:wrap}
+    section{padding:105px 0;border-top:1px solid rgba(0,150,255,.12)}
+    .section-head{max-width:650px;margin-bottom:45px}
+    .section-head h2{font-size:clamp(32px,5vw,55px);line-height:1;letter-spacing:-.035em}
+    .section-head h2 span{color:#0b9cff}
+    .section-head p{color:var(--muted);line-height:1.7;margin-top:16px}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+    .card{background:linear-gradient(145deg,#081725cc,#040a12cc);border:1px solid #12466e;border-radius:14px;padding:28px;min-height:190px;transition:.25s;position:relative;overflow:hidden}
+    .card:hover{transform:translateY(-5px);border-color:#0a9cff;box-shadow:0 0 35px #008cff18}
+    .icon{color:#10a5ff;font-size:25px;margin-bottom:25px}
+    .card h3{font-size:15px;letter-spacing:.08em}.card p{color:#879db4;font-size:13px;line-height:1.6;margin-top:10px}
+    .ai{background:radial-gradient(circle at 75% 50%,#008cff18,transparent 35%),#040a11}
+    .ai-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:50px;align-items:center}
+    .checks{list-style:none;margin:25px 0}.checks li{margin:13px 0;color:#a9b9cb}.checks li:before{content:"✓";color:#0aa2ff;margin-right:10px}
+    .terminal{border:1px solid #126096;border-radius:18px;padding:18px;background:#030912;box-shadow:0 0 50px #008cff18}
+    .terminal-top{display:flex;justify-content:space-between;color:#5c7894;font-size:10px;border-bottom:1px solid #11324d;padding-bottom:12px}
+    .online{color:#21e6a1}.chat{padding:50px 25px 25px;min-height:300px}.bubble{background:#091b2c;border:1px solid #16466b;padding:16px;border-radius:12px;color:#c9d8e8;max-width:80%;margin-bottom:18px}.bubble.me{margin-left:auto;background:#087ce31c;border-color:#087ce3}.input{border:1px solid #17496d;border-radius:10px;padding:15px;color:#5f7a94}
+    .projects{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.project{height:300px;border:1px solid #12466e;border-radius:15px;overflow:hidden;position:relative;background:linear-gradient(145deg,#0a2034,#03070d)}.project:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 60% 30%,#008cff55,transparent 30%)}.project div{position:absolute;bottom:0;left:0;right:0;padding:22px;background:linear-gradient(transparent,#03070d)}.project h3{font-size:17px}.project p{color:#8da4bb;font-size:12px;margin-top:6px}
+    .vision{background:linear-gradient(180deg,#050b13,#061426)}
+    .vision-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:50px}.vision h2{font-size:clamp(40px,6vw,75px);line-height:.95}.vision h2 span{color:#0b9cff}.steps{display:grid;gap:15px}.step{border-left:2px solid #0b9cff;padding:15px 20px;background:#07111d}.step b{color:#0b9cff}
+    .about-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:50px;align-items:center}.portrait{min-height:390px;border-radius:18px;background:radial-gradient(circle at 50% 30%,#008cff55,transparent 30%),linear-gradient(145deg,#0a2237,#03070d);border:1px solid #12466e;display:grid;place-items:center;font-size:90px;font-weight:900;color:#d9ecff;text-shadow:0 0 30px #008cff}
+    .contact{background:radial-gradient(circle at 80% 40%,#008cff16,transparent 35%)}.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px}.contact-info{display:grid;gap:12px;margin-top:25px;color:#b8c9da}.contact-info strong{color:#fff}.form{display:grid;gap:12px}.form input,.form textarea{width:100%;background:#050c14;border:1px solid #16466b;border-radius:9px;padding:14px;color:#fff;font:inherit}.form textarea{min-height:130px;resize:vertical}
+    footer{padding:35px 0;border-top:1px solid rgba(0,150,255,.12);color:#71869c;font-size:11px}.foot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}.foot strong{color:#fff;letter-spacing:.2em}
+    @media(max-width:850px){.links{display:none}.hero-grid,.ai-grid,.vision-grid,.about-grid,.contact-grid{grid-template-columns:1fr}.hero{min-height:auto;padding-top:125px;padding-bottom:70px}.hero-art{height:400px}.orb{width:280px;height:280px}.logo-core{font-size:90px}.cards,.projects{grid-template-columns:1fr}.tags{margin-top:25px}section{padding:75px 0}}
+  </style>
+</head>
+<body>
+<nav><div class="container navin">
+  <a class="brand" href="#home"><span class="mark">K</span><span>KIPHNIC<small>INTELLIGENCE. ELEVATED.</small></span></a>
+  <div class="links"><a href="#home">HOME</a><a href="#services">SERVICES</a><a href="#ai">AI</a><a href="#projects">PROJECTS</a><a href="#about">ABOUT</a><a href="#contact">CONTACT</a></div>
+  <a class="btn" href="#contact">GET STARTED →</a>
+</div></nav>
+
+<main id="home">
+<section class="hero"><div class="container">
+  <div class="hero-grid">
+    <div>
+      <div class="eyebrow">— KIPHNIC</div>
+      <h1>WE BUILD<br>WHAT'S <span>NEXT.</span></h1>
+      <p class="lead">Kiphnic is an AI-first technology company creating intelligent digital experiences, software, websites, applications and products for the future.</p>
+      <div class="actions"><a class="btn" href="#services">EXPLORE KIPHNIC →</a><a class="btn alt" href="#contact">START A PROJECT →</a></div>
+      <div class="tags"><span>AI</span><span>•</span><span>SOFTWARE</span><span>•</span><span>WEB</span><span>•</span><span>MOBILE</span><span>•</span><span>GAMES</span><span>•</span><span>DIGITAL SYSTEMS</span></div>
+    </div>
+    <div class="hero-art"><div class="orb"><div class="logo-core">K</div></div><div class="city"></div></div>
+  </div>
+</div></section>
+
+<section id="services"><div class="container">
+  <div class="section-head"><div class="eyebrow">02 — WHAT WE BUILD</div><h2>TECHNOLOGY.<br><span>INTELLIGENCE.</span><br>INNOVATION.</h2><p>We combine artificial intelligence, software engineering and creative technology to turn ambitious ideas into useful digital products.</p></div>
+  <div class="cards">
+    <article class="card"><div class="icon">◈</div><h3>AI DEVELOPMENT</h3><p>AI assistants, intelligent systems, automation and custom machine-learning experiences.</p></article>
+    <article class="card"><div class="icon">&lt;/&gt;</div><h3>SOFTWARE DEVELOPMENT</h3><p>Custom applications and digital systems designed around real-world problems.</p></article>
+    <article class="card"><div class="icon">◎</div><h3>WEB DEVELOPMENT</h3><p>Modern websites and high-performance web applications.</p></article>
+    <article class="card"><div class="icon">▣</div><h3>MOBILE DEVELOPMENT</h3><p>Mobile experiences built for today's users and tomorrow's products.</p></article>
+    <article class="card"><div class="icon">⌁</div><h3>GAME DEVELOPMENT</h3><p>Interactive worlds, games and experimental experiences.</p></article>
+    <article class="card"><div class="icon">◇</div><h3>DIGITAL SOLUTIONS</h3><p>Technology designed around specific business and user needs.</p></article>
+  </div>
+</div></section>
+
+<section id="ai" class="ai"><div class="container ai-grid">
+  <div><div class="eyebrow">03 — KIPHNIC AI</div><div class="section-head"><h2>MEET <span>KIPHNIC AI.</span></h2><p>Intelligence designed to help you think, create, research, build and solve.</p></div><ul class="checks"><li>Answer questions</li><li>Help you code</li><li>Generate ideas</li><li>Research information</li></ul><a class="btn" href="#contact">TRY KIPHNIC AI →</a></div>
+  <div class="terminal"><div class="terminal-top"><span>KIPHNIC AI // CORE</span><span class="online">● ONLINE</span></div><div class="chat"><div class="bubble">Hello, I'm Kiphnic AI.<br>How can I help you today?</div><div class="bubble me">I want to build something.</div><div class="input">Ask anything... <span style="float:right;color:#0aa2ff">→</span></div></div></div>
+</div></section>
+
+<section id="projects"><div class="container"><div class="section-head"><div class="eyebrow">04 — FEATURED PROJECTS</div><h2>BUILT BY <span>KIPHNIC.</span></h2><p>Our portfolio will grow with every product, experiment and client solution we create.</p></div>
+<div class="projects"><article class="project"><div><h3>01 — KIPHNIC AI</h3><p>AI assistant platform.</p></div></article><article class="project"><div><h3>02 — SOFTWARE SYSTEM</h3><p>Business and productivity software.</p></div></article><article class="project"><div><h3>03 — GAME PROJECT</h3><p>Interactive game development.</p></div></article></div></div></section>
+
+<section class="vision"><div class="container vision-grid"><div><div class="eyebrow">05 — OUR VISION</div><h2>THE FUTURE ISN'T SOMETHING WE WAIT FOR.<br><span>IT'S SOMETHING WE BUILD.</span></h2></div><div class="steps"><div class="step"><b>01 — IMAGINE</b><p>Ideas start here.</p></div><div class="step"><b>02 — BUILD</b><p>Technology turns ideas into reality.</p></div><div class="step"><b>03 — ELEVATE</b><p>We refine, improve and push beyond expectations.</p></div></div></div></section>
+
+<section id="about"><div class="container about-grid"><div class="portrait">K</div><div><div class="eyebrow">06 — ABOUT KIPHNIC</div><div class="section-head"><h2>THE PERSON BEHIND <span>KIPHNIC.</span></h2><p><strong style="color:#fff">Mr. Joseph</strong><br>Founder / Developer</p><p>Kiphnic is being built around a simple belief: technology should create possibilities, not just solve problems.</p></div><a class="btn alt" href="#contact">WORK WITH KIPHNIC →</a></div></div></section>
+
+<section id="contact" class="contact"><div class="container contact-grid"><div><div class="eyebrow">07 — CONTACT</div><div class="section-head"><h2>HAVE AN IDEA?<br><span>LET'S BUILD IT.</span></h2><p>Tell us what you're thinking. Kiphnic is remote-first and can collaborate from anywhere.</p></div><div class="contact-info"><div><strong>PHONE</strong><br>0200823079 · 0538616119</div><div><strong>EMAIL</strong><br>kiphnic7@gmail.com</div><div><strong>WHATSAPP</strong><br>0538616119</div></div></div><form class="form" onsubmit="event.preventDefault();alert('Contact form demo — connect this to a backend or email service next.');"><input placeholder="Your name" required><input type="email" placeholder="Your email" required><textarea placeholder="Tell us about your project"></textarea><button class="btn" type="submit">SEND MESSAGE →</button></form></div></section>
+</main>
+<footer><div class="container foot"><strong>KIPHNIC</strong><span>INTELLIGENCE. ELEVATED.</span><span>© 2026 Kiphnic. All rights reserved.</span></div></footer>
+</body></html>

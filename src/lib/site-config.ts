@@ -21,10 +21,11 @@ export const siteConfig = {
   ],
   heroTags: ["AI", "SOFTWARE", "WEB", "MOBILE", "GAMES", "DIGITAL SYSTEMS"],
   socials: [
-    { label: "X", href: "#" },
-    { label: "LinkedIn", href: "#" },
-    { label: "GitHub", href: "#" },
-    { label: "Instagram", href: "#" },
+    { label: "X", href: "https://x.com/" },
+    { label: "LinkedIn", href: "https://linkedin.com/in/" },
+    { label: "GitHub", href: "https://github.com/" },
+    { label: "Instagram", href: "https://instagram.com/" },
+    { label: "Snapchat", href: "https://snapchat.com/add/" },
   ],
   footerLine: "Build the future. Together.",
 } as const;

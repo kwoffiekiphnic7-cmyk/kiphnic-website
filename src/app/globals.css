@@ -171,7 +171,14 @@ main{display:block}
 .brand-logo-img{border-radius:10px;box-shadow:0 0 22px color-mix(in srgb, var(--accent) 33%, transparent);object-fit:cover}
 .brand-word{font-weight:800;letter-spacing:.25em}
 .brand-word small{display:block;color:var(--accent-brand);font-size:7px;letter-spacing:.25em;margin-top:3px}
-.hero-with-bg{isolation:isolate}
+/* The fixed parallax .hero-bg/.hero-shade (z:-2/-1) MUST resolve into main's
+   stacking context (main{position:relative;z-index:0}) so they paint below all
+   page content. Do NOT isolate the hero: isolation makes the whole hero unit a
+   positioned sibling that paints ABOVE static section content — stats items,
+   section heads, etc. would be covered by the fixed image (and flash visible
+   mid-reveal, then vanish when the reveal's transform ends).
+   main already contains the negative z-index, so nothing escapes behind body. */
+.hero-with-bg{}
 .hero-with-bg .hero-bg{object-fit:cover;object-position:center 30%;z-index:-2}
 .hero-with-bg .hero-shade{position:absolute;inset:0;z-index:0;pointer-events:none;background:linear-gradient(90deg,rgba(3,7,13,.55) 0%,rgba(3,7,13,.35) 45%,rgba(3,7,13,.2) 100%),linear-gradient(0deg,rgba(3,7,13,.55) 0%,transparent 40%)}
 .hero-with-bg .hero-art-fallback{display:none}

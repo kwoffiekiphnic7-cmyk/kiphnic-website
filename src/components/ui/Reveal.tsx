@@ -51,6 +51,10 @@ export default function Reveal({
     }
 
     // Fully off-screen: pre-hide it (user can't see it) and reveal on scroll.
+    // threshold 0 = reveal the instant ANY pixel intersects. rootMargin extends
+    // the trigger zone 15% below the viewport so the fade starts BEFORE the
+    // block scrolls into view — the user never sees a hidden (.pre) block on
+    // screen, which previously looked like content "vanishing" into a hole.
     setPre(true);
     const io = new IntersectionObserver(
       (entries) => {
@@ -61,7 +65,7 @@ export default function Reveal({
           }
         }
       },
-      { threshold: 0.12 }
+      { threshold: 0, rootMargin: "0px 0px 15% 0px" }
     );
     io.observe(el);
     return () => io.disconnect();

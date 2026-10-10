@@ -177,7 +177,12 @@ main{display:block}
 .hero-with-bg .hero-art-fallback{display:none}
 .hero-with-bg .hero-grid{grid-template-columns:1.1fr .9fr}
 @media(max-width:850px){.hero-with-bg .hero-bg{object-position:center 20%}.hero-with-bg .hero-shade{background:linear-gradient(180deg,rgba(3,7,13,.42),rgba(3,7,13,.55) 70%,rgba(3,7,13,.75) 100%)}}
-.reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
+/* Reveal: content is visible by default (no-JS / slow-JS safe, no flash on
+   first paint). JS only hides blocks that are fully OFF-SCREEN (.pre) — those
+   are invisible to the user anyway — then reveals them on scroll (.in).
+   Above-the-fold content is never pre-hidden, so it can't pop or flicker. */
+.reveal{transition:opacity .6s ease,transform .6s ease}
+.reveal.pre{opacity:0;transform:translateY(18px)}
 .reveal.in{opacity:1;transform:none}
 .section-head.center{text-align:center;margin-inline:auto}
 .section-head.center p{margin-inline:auto}
@@ -186,7 +191,7 @@ main{display:block}
 .foot-links a:hover{color:var(--accent-bright)}
 .foot-line{color:var(--accent-brand);letter-spacing:.2em}
 a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{outline:2px solid var(--accent-bright);outline-offset:3px;border-radius:6px}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}*{animation-duration:.01ms !important;transition-duration:.01ms !important}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal.pre,.reveal{opacity:1!important;transform:none!important;transition:none!important}*{animation-duration:.01ms !important;transition-duration:.01ms !important}}
 
 /* Phase 2 — home teasers + shared section pieces */
 .card-link{display:inline-block;margin-top:14px;color:var(--accent);font-size:12px;font-weight:800;letter-spacing:.12em}

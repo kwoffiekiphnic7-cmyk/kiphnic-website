@@ -27,8 +27,9 @@ export default function AccountButton() {
         </button>
       );
     }
+    // Signed out: open the SIGN-IN interface (own tab) by default.
     return (
-      <button className="btn nav-auth" type="button" onClick={() => openAuth("signup")}>
+      <button className="btn nav-auth" type="button" onClick={() => openAuth("signin")}>
         SIGN IN
       </button>
     );

@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import PageHero from "@/components/ui/PageHero";
 import Reveal from "@/components/ui/Reveal";
 import ProjectGallery from "@/components/sections/ProjectGallery";
+import ProjectLiveCta from "@/components/sections/ProjectLiveCta";
 import ProjectsGrid from "@/components/ProjectsGrid";
 import CtaBanner from "@/components/sections/CtaBanner";
 import { projects } from "@/data/projects";
@@ -40,14 +41,15 @@ export default async function ProjectDetailPage({
   const project = projects.find((p) => p.slug === slug);
   if (!project) notFound();
   const others = projects.filter((p) => p.slug !== slug).slice(0, 3);
-  const cta = project.href ? { label: "TRY IT LIVE →", href: project.href } : undefined;
+  const liveCta = project.href
+    ? { label: "TRY IT LIVE →", href: project.href }
+    : undefined;
   return (
     <main>
       <PageHero
         eyebrow={`PROJECT ${project.index} — ${project.tag ?? "BUILT BY KIPHNIC"}`}
         title={<>{project.title}.</>}
         body={project.body}
-        cta={cta}
         bg="/images/bg-projects.webp"
         bgAlt="Kiphnic projects background"
       />
@@ -58,7 +60,15 @@ export default async function ProjectDetailPage({
           </Reveal>
           <Reveal delay={100}>
             <div className="actions-row" style={{ marginTop: 28 }}>
-              <Link className="btn" href="/contact">
+              {liveCta ? (
+                <ProjectLiveCta
+                  href={liveCta.href}
+                  label={liveCta.label}
+                  external={project.external}
+                  requiresAuth={project.requiresAuth}
+                />
+              ) : null}
+              <Link className="btn alt" href="/contact">
                 DISCUSS A SIMILAR BUILD →
               </Link>
               <Link className="btn alt" href="/projects">

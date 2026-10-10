@@ -5,6 +5,10 @@ export type Project = {
   body: string;
   image?: string;
   href?: string;
+  /** Opens in a new tab (external site). */
+  external?: boolean;
+  /** Requires a signed-in account before the link works. */
+  requiresAuth?: boolean;
   tag?: string;
   gallery?: string[];
 };
@@ -61,8 +65,11 @@ export const projects: Project[] = [
     slug: "canvas-dodger",
     title: "CANVAS DODGER",
     tag: "GAME",
-    body: "2D arcade game — dodge, survive and chase the high score.",
+    body: "2D arcade game — dodge, survive and chase the high score. Free to play in your browser — create an account to jump in.",
     image: "/projects/canvas-dodger.webp",
+    href: "https://canvasdodger.github.io/#",
+    external: true,
+    requiresAuth: true,
     gallery: ["/projects/canvas-dodger.webp", "/projects/canvas-dodger-2.webp"],
   },
   {

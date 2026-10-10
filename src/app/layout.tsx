@@ -1,9 +1,10 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ChatLauncher from "@/components/chat/ChatLauncher";
 import MiniMe from "@/components/MiniMe";
+import AuthProvider from "@/components/auth/AuthProvider";
 import { siteConfig } from "@/lib/site-config";
 
 const siteUrl = siteConfig.url;
@@ -42,6 +43,10 @@ export const metadata: Metadata = {
   },
 };
 
+export const viewport: Viewport = {
+  themeColor: "#03070d",
+};
+
 export default function RootLayout({
   children,
 }: {
@@ -53,11 +58,13 @@ export default function RootLayout({
         <a className="skip-link" href="#main">
           Skip to content
         </a>
-        <Navbar />
-        <div id="main">{children}</div>
-        <Footer />
-        <MiniMe />
-        <ChatLauncher />
+        <AuthProvider>
+          <Navbar />
+          <div id="main">{children}</div>
+          <Footer />
+          <MiniMe />
+          <ChatLauncher />
+        </AuthProvider>
       </body>
     </html>
   );

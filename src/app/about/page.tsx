@@ -100,7 +100,7 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
-      <section className="process" style={{ background: "linear-gradient(180deg,#050b13,#061426)" }}>
+      <section className="process" style={{ background: "linear-gradient(180deg,var(--bg-3),var(--bg-4))" }}>
         <div className="container">
           <Reveal>
             <div className="eyebrow">OUR TIMELINE</div>

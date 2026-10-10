@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { siteConfig } from "@/lib/site-config";
 import Logo from "@/components/layout/Logo";
+import AccountButton from "@/components/auth/AccountButton";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -23,6 +24,7 @@ export default function Navbar() {
         <Link className="btn nav-cta" href="/contact">
           GET STARTED →
         </Link>
+        <AccountButton />
         <button
           className="hamburger"
           aria-label={open ? "Close menu" : "Open menu"}

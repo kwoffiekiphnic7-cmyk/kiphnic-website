@@ -1,13 +1,3 @@
-export const socials = [
-  { label: "X", href: "https://x.com/" },
-  { label: "LinkedIn", href: "https://linkedin.com/in/" },
-  { label: "GitHub", href: "https://github.com/" },
-  { label: "Instagram", href: "https://instagram.com/" },
-  { label: "Snapchat", href: "https://snapchat.com/add/" },
-] as const;
-
-export type Social = (typeof socials)[number];
-
 export const siteConfig = {
   name: "KIPHNIC",
   // Current canonical origin. Overridable via NEXT_PUBLIC_SITE_URL when a custom domain arrives.
@@ -30,10 +20,14 @@ export const siteConfig = {
     { label: "CONTACT", href: "/contact" },
   ],
   heroTags: ["AI", "SOFTWARE", "WEB", "MOBILE", "GAMES", "DIGITAL SYSTEMS"],
-  socials,
+  socials: [
+    { label: "X", href: "https://x.com/" },
+    { label: "LinkedIn", href: "https://linkedin.com/in/" },
+    { label: "GitHub", href: "https://github.com/" },
+    { label: "Instagram", href: "https://instagram.com/" },
+    { label: "Snapchat", href: "https://snapchat.com/add/" },
+  ],
   footerLine: "Build the future. Together.",
 } as const;
 
 export type SiteConfig = typeof siteConfig;
-
-export type SocialLabel = (typeof socials)[number]["label"];

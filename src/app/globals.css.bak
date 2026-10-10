@@ -92,6 +92,4 @@
     .social-chip:hover{border-color:var(--accent);color:var(--accent-soft);box-shadow:0 0 18px color-mix(in srgb, var(--accent) 13%, transparent)}
     .socials{display:grid;gap:10px;margin-top:6px}
     .socials-row{display:flex;gap:10px;flex-wrap:wrap}
-
-/* Social media logos (inline SVG), replacing text labels. */\n.social-chip svg{display:block;width:18px;height:18px;color:var(--text-soft);transition:.25s}\n.social-chip svg:hover{color:var(--accent-soft);transform:scale(1.12)}\n.social-chip{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;padding:8px 12px;border:1px solid var(--line-3);font-size:11px;letter-spacing:.12em;color:var(--text-soft);transition:.25s}\n.social-chip:hover{border-color:var(--accent);color:var(--accent-soft);box-shadow:0 0 18px color-mix(in srgb, var(--accent) 13%, transparent);transform:scale(1.05)}
     @media(max-width:850px){.stats-row{grid-template-columns:repeat(3,1fr)}.feature-card{padding:36px 24px}}

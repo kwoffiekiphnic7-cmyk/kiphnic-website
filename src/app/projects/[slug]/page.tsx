@@ -89,15 +89,6 @@ export default async function ProjectDetailPage({
           <ProjectsGrid items={others} />
         </div>
       </section>
-      <section className="project-shot" style={{ marginTop: 40 }}>
-        <div className="container">
-          <Reveal>
-            <div className="eyebrow">NEXT STORY</div>
-            <p style={{ margin: "10px 0 14px 0" }}>Kept exploring — {others.length} more builds on the way.</p>
-            <ProjectsGrid items={others} />
-          </Reveal>
-        </div>
-      </section>
       <CtaBanner />
     </main>
   );
